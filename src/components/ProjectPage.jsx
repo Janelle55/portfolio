@@ -24,6 +24,7 @@ export default function ProjectPage({ slug }) {
   const external = p.link && p.link.href.startsWith('http');
   const built = p.built || [];
   const challenges = p.challenges || [];
+  const isTeam = /team of \d/i.test(p.team || '');
 
   return (
     <main className="case">
@@ -63,7 +64,7 @@ export default function ProjectPage({ slug }) {
 
             {built.length > 0 && (
               <section className="case-section">
-                <h2>What I built</h2>
+                <h2>{isTeam ? 'What we built' : 'What I built'}</h2>
                 <ul className="case-list">
                   {built.map((b) => (
                     <li key={b}>{b}</li>
