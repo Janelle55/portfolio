@@ -64,6 +64,7 @@ export const projects = [
     description:
       'A music recommender system with a custom guardrail and reliability layer, an evaluation test harness, and a model card that is honest about its limits.',
     tags: ['Applied AI', 'Evaluation', 'CodePath AI110'],
+    image: '/projects/vibematch.jpg',
     link: null,
     period: 'Jun to Aug 2026',
     team: 'Capstone project, CodePath AI Engineering (AI110)',
@@ -107,6 +108,7 @@ export const projects = [
     description:
       "The page you're on: a spinning globe of my journey and a private admin dashboard where I publish projects and events without touching code.",
     tags: ['React', 'Vite', 'Supabase', 'globe.gl'],
+    image: '/projects/portfolio.jpg',
     link: { label: 'View the code', href: 'https://github.com/Janelle55/portfolio' },
     period: 'Oct 2026 to now',
     team: 'Personal project',
