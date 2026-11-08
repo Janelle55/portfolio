@@ -2,6 +2,8 @@
 
 Personal portfolio site built with React, Vite, and globe.gl.
 
+Live at https://janelle-yankey.vercel.app
+
 ## Run it locally (Windows, PowerShell)
 
 1. Install [Node.js](https://nodejs.org) (LTS) if you don't have it. Check with `node -v`.
@@ -43,4 +45,4 @@ The finished site is in `dist/`. Vercel runs this step for you when you deploy.
 
 - Supabase: move `content.js` data into tables so the admin dashboard can edit it
 - Admin dashboard at `/admin`, sign-in for the owner only
-- Deploy to Vercel
+- Custom domain (optional)
