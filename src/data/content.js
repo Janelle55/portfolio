@@ -199,7 +199,7 @@ export const events = [
     when: 'March 2025',
     title: 'BisonBytes Hackathon',
     text: 'Built MedTrack, a health monitoring app, in 24 hours. Learned to plan fast, split the work, and ship something real under pressure.',
-    photo: null,
+    photo: '/events/bisonbytes-2025.jpg',
     photoColor: 'teal',
     link: null,
   },
