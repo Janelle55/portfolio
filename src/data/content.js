@@ -135,6 +135,12 @@ export const research = [
     link: { label: 'See the project', href: '/projects/elevate-black-voices' },
   },
   {
+    when: 'June 2026',
+    title: 'Published paper, ACM FAccT 2026',
+    text: 'Nias, Aryal, Campbell, Cooper, Douglass, and Yankey. "Adinkra Symbols through Generative AI: A Semiotic Analysis of Emoji-Based Translation." The 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT), 1340–1354.',
+    link: { label: 'Read the paper', href: 'https://doi.org/10.1145/3805689.3806725' },
+  },
+  {
     when: 'May 2026',
     title: 'Published paper, AAAI 2026 Spring Symposium',
     text: 'Nias, Campbell, Yankey, and Douglass. "CARE: Culturally Aligned AI for Reflective Creativity Through Adinkra Semiotic Knowledge." Proceedings of the AAAI Symposium Series, 8(1), 706–714. I verified the accuracy of the research data as a Fante and Twi speaker.',

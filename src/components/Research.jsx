@@ -6,7 +6,7 @@ export default function Research() {
     <section id="research" className="wrap research">
       <div className="research-head">
         <h2 className="section-title">Research</h2>
-        <p>Human-Centered AI Institute, Howard University</p>
+        <p>Human-Centered AI Institute, Howard University. Two published papers in 2026.</p>
       </div>
       <div className="research-list">
         {research.map((r) => (
