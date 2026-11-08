@@ -15,6 +15,7 @@ export const profile = {
   email: null,
   linkedin: 'https://linkedin.com/in/janelle-yankey',
   github: 'https://github.com/Janelle55',
+  scholar: 'https://scholar.google.com/citations?user=tJYMI1kAAAAJ',
   availability:
     'Open to internships, co-ops, early-career programs, and new-grad roles starting January 2027. Happy to relocate.',
 };

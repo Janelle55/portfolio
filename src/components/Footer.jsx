@@ -23,6 +23,7 @@ export default function Footer() {
           </a>
           <a className="btn btn-outline-light" href={profile.resumeUrl}>Resume</a>
           <a className="btn btn-outline-light" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a className="btn btn-outline-light" href={profile.scholar} target="_blank" rel="noreferrer">Google Scholar</a>
         </div>
         <p className="copyright">© {new Date().getFullYear()} Janelle Nana Akokua Yankey</p>
       </div>

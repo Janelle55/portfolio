@@ -1,12 +1,13 @@
 import { useContent } from '../ContentContext.jsx';
 
 export default function Research() {
-  const { research, certifications } = useContent();
+  const { research, certifications, profile } = useContent();
   return (
     <section id="research" className="wrap research">
       <div className="research-head">
         <h2 className="section-title">Research</h2>
         <p>Human-Centered AI Institute, Howard University. Two published papers in 2026.</p>
+        <a className="research-link" href={profile.scholar} target="_blank" rel="noreferrer">Google Scholar profile ↗</a>
       </div>
       <div className="research-list">
         {research.map((r) => (
