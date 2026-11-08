@@ -47,7 +47,7 @@ async function uploadFile(rawFile, folder) {
   const file = await shrinkImage(rawFile);
   const safe = file.name.toLowerCase().replace(/[^a-z0-9.]+/g, '-');
   const path = `${folder}/${Date.now()}-${safe}`;
-  const { error } = await supabase.storage.from('media').upload(path, file, { upsert: true });
+  const { error } = await supabase.storage.from('media').upload(path, file, { contentType: file.type || undefined });
   if (error) throw error;
   return supabase.storage.from('media').getPublicUrl(path).data.publicUrl;
 }
@@ -108,8 +108,8 @@ function Editor({ section, row, onCancel, onSaved, toast }) {
       setBusy(true);
       set(key, await uploadFile(file, section));
       toast('Image uploaded');
-    } catch {
-      setError('The image did not upload. Check that it is a JPG or PNG under 5 MB and try again.');
+    } catch (err) {
+      setError(`The image did not upload (${err?.message || 'unknown error'}). Try again, or try a different photo.`);
     } finally {
       setBusy(false);
     }
