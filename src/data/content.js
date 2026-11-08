@@ -37,7 +37,7 @@ export const projects = [
       'An interactive globe for HCAI research on how voice tech treats Black speakers: dot clustering, emotion heatmaps, state filters, dark and light modes, and a presentation mode, with a RoBERTa sentiment pipeline behind it.',
     note: 'The research data is confidential, so the public code runs on made-up sample data. Happy to give a live walkthrough.',
     tags: ['React', 'Vite', 'globe.gl', 'Python · RoBERTa'],
-    image: null,
+    image: '/projects/ebv-globe.jpg',
     link: { label: 'View the code', href: 'https://github.com/Janelle55/AAVE-Voices-Demo' },
     period: 'Apr 2026 to now',
     team: 'Howard HCAI research team, in collaboration with Google',
@@ -138,7 +138,7 @@ export const research = [
   {
     when: 'June 2026',
     title: 'Published paper, ACM FAccT 2026',
-    text: 'Nias, Aryal, Campbell, Cooper, Douglass, and Yankey. "Adinkra Symbols through Generative AI: A Semiotic Analysis of Emoji-Based Translation." The 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT), 1340–1354.',
+    text: 'Nias, Aryal, Campbell, Cooper, Douglass, and Yankey. "Adinkra Symbols through Generative AI: A Semiotic Analysis of Emoji-Based Translation." The 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT), 1340–1354. I verified the accuracy of the research data as a Fante and Twi speaker.',
     link: { label: 'Read the paper', href: 'https://doi.org/10.1145/3805689.3806725' },
   },
   {
