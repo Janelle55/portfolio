@@ -180,7 +180,7 @@ export const events = [
     when: 'March 2026',
     title: 'ADMI Symposium 2026',
     text: 'Presented two research posters with my HCAI team on evaluating LLM outputs and using generative AI to improve image quality. I supported both projects with data labeling and coordination, helping keep the research organized and accurate.',
-    photo: null,
+    photo: '/events/admi-2026.jpg',
     photoColor: 'sky',
     link: {
       label: 'Read my LinkedIn post',
