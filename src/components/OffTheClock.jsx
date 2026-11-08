@@ -27,7 +27,10 @@ export default function OffTheClock() {
               {table.length > 0 && (
                 <ul className="menu-list">
                   {table.map((item) => (
-                    <li key={item.course + item.name}>
+                    <li key={item.course + item.name} className={item.photo ? 'has-photo' : ''}>
+                      {item.photo && (
+                        <img className="menu-photo" src={item.photo} alt={item.name} loading="lazy" />
+                      )}
                       <span className="menu-course">{item.course}</span>
                       <span className="menu-name">{item.name}</span>
                     </li>

@@ -49,6 +49,7 @@ create table if not exists public.table_items (
   id bigint generated always as identity primary key,
   course text not null default 'Made at home',
   name text not null,
+  image_url text,
   sort_order int not null default 0,
   published boolean not null default false,
   created_at timestamptz not null default now()
@@ -66,6 +67,9 @@ create table if not exists public.site_settings (
   key text primary key,
   value text
 );
+
+-- Added later: food photos for Akokua's Table (safe to run on an existing database)
+alter table public.table_items add column if not exists image_url text;
 
 -- ---------- Row level security ----------
 alter table public.projects enable row level security;

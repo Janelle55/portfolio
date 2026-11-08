@@ -58,6 +58,7 @@ export const SECTIONS = {
     fields: [
       { key: 'name', label: 'Dish or restaurant', type: 'text', required: true, placeholder: 'e.g. Jollof rice' },
       { key: 'course', label: 'Section', type: 'select', options: ['Made at home', 'Tried and loved', 'On my list'] },
+      { key: 'image_url', label: 'Photo of the food', type: 'image' },
     ],
     blank: { course: 'Made at home' },
   },

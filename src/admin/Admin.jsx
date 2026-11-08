@@ -23,7 +23,28 @@ function useToast() {
   return [msg, setMsg];
 }
 
-async function uploadFile(file, folder) {
+// Phone photos can be 5 MB or more. Shrink images to at most 1600px wide
+// (JPEG, good quality) so the homepage stays fast. PDFs upload as they are.
+async function shrinkImage(file) {
+  if (!file.type.startsWith('image/') || file.type === 'image/gif' || file.type === 'image/svg+xml') return file;
+  try {
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
+    if (scale === 1 && file.size < 900000) return file;
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(bitmap.width * scale);
+    canvas.height = Math.round(bitmap.height * scale);
+    canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise((res) => canvas.toBlob(res, 'image/jpeg', 0.85));
+    if (!blob) return file;
+    return new File([blob], file.name.replace(/\.[^.]+$/, '') + '.jpg', { type: 'image/jpeg' });
+  } catch {
+    return file;
+  }
+}
+
+async function uploadFile(rawFile, folder) {
+  const file = await shrinkImage(rawFile);
   const safe = file.name.toLowerCase().replace(/[^a-z0-9.]+/g, '-');
   const path = `${folder}/${Date.now()}-${safe}`;
   const { error } = await supabase.storage.from('media').upload(path, file, { upsert: true });
@@ -269,7 +290,11 @@ function ListView({ section, rows, reload, toast, log, startNew, clearNew }) {
                 <button type="button" aria-label={`Move ${r.title || r.name} up`} disabled={i === 0} onClick={() => move(i, -1)}>↑</button>
                 <button type="button" aria-label={`Move ${r.title || r.name} down`} disabled={i === rows.length - 1} onClick={() => move(i, 1)}>↓</button>
               </div>
-              <div className="adm-sw" style={{ background: cfg.swatch(r) }} aria-hidden="true" />
+              {r.image_url || r.photo_url ? (
+                <img className="adm-sw adm-sw-img" src={r.image_url || r.photo_url} alt="" />
+              ) : (
+                <div className="adm-sw" style={{ background: cfg.swatch(r) }} aria-hidden="true" />
+              )}
               <div className="adm-meta">
                 <div className="adm-t">{r.title || r.name}</div>
                 <div className="adm-s">{cfg.subtitle(r)}</div>

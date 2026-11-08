@@ -76,7 +76,7 @@ async function loadFromSupabase() {
     },
     projects: projects.length ? projects : staticContent.projects,
     events: e.data.map(mapEvent),
-    table: t.data.map((r) => ({ course: r.course, name: r.name })),
+    table: t.data.map((r) => ({ course: r.course, name: r.name, photo: r.image_url })),
     music: {
       artists: m.data.map((r) => r.name),
       genres: settings.genres

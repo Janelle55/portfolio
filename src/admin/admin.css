@@ -75,6 +75,7 @@
 .adm-order button { width: 32px; height: 22px; border-radius: 6px; border: 1px solid var(--adm-line); background: transparent; color: var(--ink); cursor: pointer; font: inherit; font-size: 12px; line-height: 1; }
 .adm-order button:disabled { opacity: 0.3; cursor: default; }
 .adm-sw { width: 48px; height: 48px; border-radius: 12px; flex: 0 0 auto; }
+.adm-sw-img { object-fit: cover; border: 1px solid var(--adm-line); }
 .adm-meta { flex: 1 1 220px; min-width: 0; }
 .adm-t { font-weight: 800; font-size: 16px; }
 .adm-s { font-size: 14px; color: var(--adm-soft); }

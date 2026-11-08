@@ -263,9 +263,10 @@ em { font-style: italic; }
 .menu-title { font-weight: 800; font-size: clamp(34px, 4vw, 46px); line-height: 1; }
 .menu-title em { font-weight: 700; color: var(--rose-ink2); }
 .menu-intro { max-width: 360px; font-size: 16px; color: var(--ink-soft); }
-.menu-list { list-style: none; margin: 0; padding: 4px 0 0; width: 100%; max-width: 380px; display: flex; flex-direction: column; }
-.menu-list li { display: flex; flex-direction: column; gap: 2px; padding-block: 10px; }
-.menu-list li + li { border-top: 1px dotted var(--gold); }
+.menu-list { list-style: none; margin: 0; padding: 4px 0 0; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px 16px; }
+.menu-list li { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 12px; border-top: 1px dotted var(--gold); }
+.menu-list li.has-photo { border-top: 0; padding-top: 0; }
+.menu-photo { width: 100%; max-width: 220px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; border: 2px solid var(--gold); padding: 3px; background: var(--card); margin-bottom: 8px; box-shadow: 0 8px 20px rgba(110,15,44,0.15); }
 .menu-course { font-family: var(--display); font-style: italic; font-size: 15px; color: var(--rose-ink); }
 .menu-name { font-family: var(--display); font-size: 22px; font-weight: 700; }
 
