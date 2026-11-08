@@ -1,4 +1,4 @@
-import { projects } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 
 function ProjectCard({ p, index }) {
   const number = String(index + 1).padStart(2, '0');
@@ -34,6 +34,7 @@ function ProjectCard({ p, index }) {
 }
 
 export default function Work() {
+  const { projects } = useContent();
   const [featured, ...rest] = projects;
   return (
     <section id="work" className="work">

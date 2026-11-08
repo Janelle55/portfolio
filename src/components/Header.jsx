@@ -1,6 +1,7 @@
-import { profile } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 
 export default function Header({ theme, onToggleTheme }) {
+  const { profile } = useContent();
   const dark = theme === 'dark';
   return (
     <header className="site-header wrap">

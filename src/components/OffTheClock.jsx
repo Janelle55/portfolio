@@ -1,8 +1,9 @@
-import { table, music } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 import Rose from './Rose.jsx';
 
 // One personal section: Akokua's Table (food) and On repeat (music), side by side.
 export default function OffTheClock() {
+  const { table, music } = useContent();
   return (
     <section id="offclock" className="otc-band">
       <div className="wrap otc-inner">

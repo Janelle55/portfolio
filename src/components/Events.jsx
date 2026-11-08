@@ -1,6 +1,7 @@
-import { events } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 
 export default function Events() {
+  const { events } = useContent();
   return (
     <section id="events" className="events">
       <div className="wrap events-inner">

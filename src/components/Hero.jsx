@@ -1,10 +1,11 @@
-import { profile } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 import { lazy, Suspense } from 'react';
 import Stars from './Stars.jsx';
 
 const JourneyGlobe = lazy(() => import('./JourneyGlobe.jsx'));
 
 export default function Hero({ theme }) {
+  const { profile } = useContent();
   const { first, middle, last } = profile.fullName;
   return (
     <div className="hero">

@@ -1,6 +1,7 @@
-import { skills } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 
 export default function SkillsStrip() {
+  const { skills } = useContent();
   const loop = [...skills, ...skills];
   return (
     <div className="skills-strip">

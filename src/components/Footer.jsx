@@ -1,7 +1,8 @@
-import { profile } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 import Stars from './Stars.jsx';
 
 export default function Footer() {
+  const { profile } = useContent();
   return (
     <footer id="contact" className="footer">
       <Stars count={70} maxTop={70} />

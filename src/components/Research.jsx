@@ -1,6 +1,7 @@
-import { research, certifications } from '../data/content.js';
+import { useContent } from '../ContentContext.jsx';
 
 export default function Research() {
+  const { research, certifications } = useContent();
   return (
     <section id="research" className="wrap research">
       <div className="research-head">

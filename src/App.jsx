@@ -8,11 +8,12 @@ import Events from './components/Events.jsx';
 import OffTheClock from './components/OffTheClock.jsx';
 import Footer from './components/Footer.jsx';
 import { useTheme } from './useTheme.js';
+import { ContentProvider } from './ContentContext.jsx';
 
 export default function App() {
   const [theme, toggleTheme] = useTheme();
   return (
-    <>
+    <ContentProvider>
       <section className="hero-band" id="top">
         <Header theme={theme} onToggleTheme={toggleTheme} />
         <Hero theme={theme} />
@@ -26,6 +27,6 @@ export default function App() {
         <OffTheClock />
       </main>
       <Footer />
-    </>
+    </ContentProvider>
   );
 }
