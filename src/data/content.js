@@ -201,7 +201,7 @@ export const events = [
     text: 'Built MedTrack, a health monitoring app, in 24 hours. Learned to plan fast, split the work, and ship something real under pressure.',
     photo: '/events/bisonbytes-2025.jpg',
     photoColor: 'teal',
-    link: null,
+    link: { label: 'See MedTrack on Devpost', href: 'https://devpost.com/software/medtrack-zkfu5r' },
   },
 ];
 
