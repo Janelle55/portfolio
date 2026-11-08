@@ -35,10 +35,10 @@ export const projects = [
     color: 'teal',
     description:
       'An interactive globe for HCAI research on how voice tech treats Black speakers: dot clustering, emotion heatmaps, state filters, dark and light modes, and a presentation mode, with a RoBERTa sentiment pipeline behind it.',
-    note: "Research data is confidential, so I'm happy to give a live walkthrough instead.",
+    note: 'The research data is confidential, so the public code runs on made-up sample data. Happy to give a live walkthrough.',
     tags: ['React', 'Vite', 'globe.gl', 'Python · RoBERTa'],
     image: null,
-    link: null,
+    link: { label: 'View the code', href: 'https://github.com/Janelle55/AAVE-Voices-Demo' },
     period: 'Apr 2026 to now',
     team: 'Howard HCAI research team, in collaboration with Google',
     role: 'Undergraduate Research Intern. I built the interactive globe app and the sentiment analysis pipeline, and co-authored a section of the research paper.',
