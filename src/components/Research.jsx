@@ -1,0 +1,26 @@
+import { research, certifications } from '../data/content.js';
+
+export default function Research() {
+  return (
+    <section id="research" className="wrap research">
+      <div className="research-head">
+        <h2 className="section-title">Research</h2>
+        <p>Human-Centered AI Institute, Howard University</p>
+      </div>
+      <div className="research-list">
+        {research.map((r) => (
+          <div className="research-item" key={r.title}>
+            <p className="research-when">{r.when}</p>
+            <div>
+              <h3>{r.title}</h3>
+              <p>{r.text}</p>
+            </div>
+          </div>
+        ))}
+        <p className="certs">
+          <strong>Certified</strong> {certifications.join(' · ')}
+        </p>
+      </div>
+    </section>
+  );
+}
