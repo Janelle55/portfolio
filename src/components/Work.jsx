@@ -3,6 +3,7 @@ import { useContent } from '../ContentContext.jsx';
 function ProjectCard({ p, index }) {
   const number = String(index + 1).padStart(2, '0');
   const external = p.link && p.link.href.startsWith('http');
+  const hasDetails = Boolean(p.slug && ((p.built && p.built.length) || p.overview));
   return (
     <article className={`project project-${p.color}${p.featured ? ' project-featured' : ''}`}>
       <div className="project-body">
@@ -18,11 +19,18 @@ function ProjectCard({ p, index }) {
             <li key={t}>{t}</li>
           ))}
         </ul>
-        {p.link && (
-          <a className="project-link" href={p.link.href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}>
-            {p.link.label} →
-          </a>
-        )}
+        <div className="project-links">
+          {hasDetails && (
+            <a className="project-link" href={`/projects/${p.slug}`}>
+              See what I built →
+            </a>
+          )}
+          {p.link && (
+            <a className="project-link project-link-alt" href={p.link.href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}>
+              {p.link.label} ↗
+            </a>
+          )}
+        </div>
       </div>
       {p.image && (
         <div className="project-media">

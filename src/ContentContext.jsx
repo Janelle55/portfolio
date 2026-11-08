@@ -19,8 +19,17 @@ const staticContent = {
   journey: fallback.journey,
 };
 
+const lines = (t) => (t || '').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean);
+
 function mapProject(r) {
   return {
+    slug: r.slug,
+    period: r.period,
+    team: r.team,
+    role: r.my_role,
+    overview: r.overview,
+    built: lines(r.built),
+    challenges: lines(r.challenges),
     title: r.title,
     description: r.description,
     note: r.note,

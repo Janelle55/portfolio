@@ -131,6 +131,10 @@ function Editor({ section, row, onCancel, onSaved, toast }) {
       payload[f.key] = v ?? null;
     }
     payload.published = Boolean(vals.published);
+    if (section === 'projects') {
+      const slugify = (t) => String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      payload.slug = slugify(payload.slug || payload.title) || null;
+    }
     setBusy(true);
     const q = row
       ? supabase.from(cfg.table).update(payload).eq('id', row.id)

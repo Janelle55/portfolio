@@ -71,6 +71,16 @@ create table if not exists public.site_settings (
 -- Added later: food photos for Akokua's Table (safe to run on an existing database)
 alter table public.table_items add column if not exists image_url text;
 
+-- Added later: project detail pages
+alter table public.projects add column if not exists slug text;
+alter table public.projects add column if not exists period text;
+alter table public.projects add column if not exists team text;
+alter table public.projects add column if not exists my_role text;
+alter table public.projects add column if not exists overview text;
+alter table public.projects add column if not exists built text;
+alter table public.projects add column if not exists challenges text;
+create unique index if not exists projects_slug_key on public.projects (slug);
+
 -- ---------- Row level security ----------
 alter table public.projects enable row level security;
 alter table public.events enable row level security;

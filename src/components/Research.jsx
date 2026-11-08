@@ -15,6 +15,11 @@ export default function Research() {
             <div>
               <h3>{r.title}</h3>
               <p>{r.text}</p>
+              {r.link && (
+                <a className="research-link" href={r.link.href} {...(r.link.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>
+                  {r.link.label} {r.link.href.startsWith('http') ? '↗' : '→'}
+                </a>
+              )}
             </div>
           </div>
         ))}
